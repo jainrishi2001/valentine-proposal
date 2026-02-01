@@ -208,7 +208,7 @@ function expandYesButtonFullscreen() {
     
     // Create text element
     const text = document.createElement('div');
-    text.textContent = "Okay okay… just click YES already 💘";
+    text.textContent = "Just click YES already 💘";
     text.className = 'fullscreen-yes-text';
     text.style.cssText = `
         font-size: 3rem;
