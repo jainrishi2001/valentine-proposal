@@ -231,10 +231,12 @@ body {
     width: 250px;
     height: auto;
     max-width: 60%;
+    max-height: 30vh;
     border-radius: 20px;
     margin-bottom: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     animation: gentleBounce 2s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+    object-fit: contain;
 }
 
 @keyframes gentleBounce {
@@ -496,6 +498,7 @@ body {
     .proposal-gif {
         width: 200px;
         max-width: 70%;
+        max-height: 28vh;
         margin-bottom: 25px;
     }
 
@@ -544,6 +547,24 @@ body {
     }
 }
 
+@media (max-width: 600px) {
+    .proposal-gif {
+        width: 160px;
+        max-width: 75%;
+        max-height: 25vh;
+        margin-bottom: 20px;
+    }
+    
+    .proposal-box {
+        padding: 40px 25px;
+    }
+    
+    .title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
+
 @media (max-width: 480px) {
     .bouquet {
         width: 250px;
@@ -554,18 +575,19 @@ body {
     }
 
     .proposal-box {
-        padding: 40px 25px;
+        padding: 35px 20px;
     }
     
     .proposal-gif {
-        width: 180px;
+        width: 140px;
         max-width: 80%;
-        margin-bottom: 20px;
+        max-height: 22vh;
+        margin-bottom: 18px;
     }
 
     .title {
         font-size: 1.8rem;
-        margin-bottom: 35px;
+        margin-bottom: 30px;
     }
 
     .subtitle {
