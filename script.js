@@ -175,7 +175,56 @@ function updateYesButtonScale() {
 // Function to expand Yes button to fullscreen
 function expandYesButtonFullscreen() {
     yesBtn.classList.add('yes-fullscreen');
-    yesBtn.textContent = "Okay okay… just click YES already 💘";
+    
+    // Clear existing content and create new structure
+    yesBtn.innerHTML = '';
+    
+    // Create container for better control
+    const container = document.createElement('div');
+    container.style.cssText = `
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+        height: 100%;
+    `;
+    
+    // Create and add GIF
+    const gif = document.createElement('img');
+    gif.src = 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM25rcTVvMmE2eHg1ZXZoMnMyMGxucDRqeDhpZHNtdThpeTF0cnRqcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lTYcvZ2GVPIZE1lArV/giphy.gif';
+    gif.alt = 'Please say yes!';
+    gif.className = 'fullscreen-yes-gif';
+    gif.style.cssText = `
+        width: 300px;
+        max-width: 50%;
+        max-height: 35vh;
+        height: auto;
+        display: block;
+        border-radius: 20px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    `;
+    
+    // Create text element
+    const text = document.createElement('div');
+    text.textContent = "Okay okay… just click YES already 💘";
+    text.className = 'fullscreen-yes-text';
+    text.style.cssText = `
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+        padding: 0 20px;
+        text-align: center;
+    `;
+    
+    // Append to container
+    container.appendChild(gif);
+    container.appendChild(text);
+    
+    // Append container to button
+    yesBtn.appendChild(container);
     
     // Hide No button
     noBtn.style.opacity = '0';
@@ -186,8 +235,6 @@ function expandYesButtonFullscreen() {
         clearInterval(hoverInterval);
         hoverInterval = null;
     }
-    
-    console.log('Yes button expanded to fullscreen!');
 }
 
 // Make "No" button run away on hover
